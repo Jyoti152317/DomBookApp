@@ -37,7 +37,7 @@ bookForm.addEventListener("submit", function () {
     .catch((error) => console.log(error));
 });
 
-function diplayBooks(arr) {
+function displayBooks(arr) {
   let cont = document.getElementById("cont").innerHTML;
   cont = "";
   let card = arr.map((ele, index) => {
@@ -65,3 +65,17 @@ function diplayBooks(arr) {
     cont.append(card);
   });
 }
+
+async function getData() {
+  try {
+    let response = await fetch(`${baseurl}/books`);
+    let data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+window.onload = () => {
+  let arr = getData();
+  displayBooks(arr);
+};
