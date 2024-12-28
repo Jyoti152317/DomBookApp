@@ -1,1 +1,1 @@
-export const baseurle = "https://road-ringed-drain.glitch.me";
+export const baseurl = "https://road-ringed-drain.glitch.me";
